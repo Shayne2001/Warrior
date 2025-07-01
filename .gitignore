@@ -1,0 +1,11 @@
+# Visual Studio created
+*.suo
+*.user
+.vs/
+bin/
+obj/
+*.vscode/
+
+# Related to Unreal Engine
+Intermediate/
+Saved/
