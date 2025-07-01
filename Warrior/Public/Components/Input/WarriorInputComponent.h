@@ -37,7 +37,7 @@ inline void UWarriorInputComponent::BindAbilityInputAction(const UDataAsset_Inpu
 {
 	checkf(InInputConfig, TEXT("Input config data asset is null, can not proceed with binding"));
 	for (const FWarriorInputActionConfig& AbilityInputActionConfig : InInputConfig->AbilityInputActions) {
-		if (AbilityInputActionConfig.IsValid()) continue;
+		if (!AbilityInputActionConfig.IsValid()) continue;
 		// 按键按下时触发InputPressedFunc，释放时触发InputReleasedFunc
 		BindAction(AbilityInputActionConfig.InputAction, ETriggerEvent::Started, ContextObject, InputPressedFunc, AbilityInputActionConfig.InputTag);
 		BindAction(AbilityInputActionConfig.InputAction, ETriggerEvent::Completed, ContextObject, InputReleasedFunc, AbilityInputActionConfig.InputTag);
