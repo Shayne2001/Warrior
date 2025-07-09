@@ -8,6 +8,7 @@
 
 class UWarriorGameplayAbility;
 class UWarriorAbilitySystemComponent;
+class UGameplayEffect;
 /**
  * 
  */
@@ -28,6 +29,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "StartUpData")
 	// 特定条件下触发的像hit react 或 death 等技能的数组，由于hero和enemy都有这种技能，所以放在base类中
 	TArray<TSubclassOf<UWarriorGameplayAbility>> ReactiveAbilities;
+
+	UPROPERTY(EditDefaultsOnly, Category = "StartUpData")
+	TArray<TSubclassOf<UGameplayEffect>> StartUpGameplayEffects;
 
 	void GrantAbilities(const TArray<TSubclassOf<UWarriorGameplayAbility>>& InAbilitiesToGive, UWarriorAbilitySystemComponent* InASCToGive, int32 ApplyLevel = 1);
 
