@@ -41,6 +41,9 @@ public:
 
 	virtual void OnHitTargetActor(AActor* HitActor);
 	virtual void OnWeaponPulledFromTargetActor(AActor* InteractedActor);
+
+protected:
+	TArray<AActor*> OverlappedActors;
 private:
 	// TMap方便检索武器，且方便后续添加，尽管当前每种角色只有一种武器
 	TMap<FGameplayTag, AWarriorWeaponBase*> CharacterCarriedWeaponMap;
