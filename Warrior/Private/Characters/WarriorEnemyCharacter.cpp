@@ -24,6 +24,8 @@ AWarriorEnemyCharacter::AWarriorEnemyCharacter()
 	GetCharacterMovement()->BrakingDecelerationFalling = 1000.f;
 
 	EnemyCombatComponent = CreateDefaultSubobject<UEnemyCombatComponent>("EnemyCombatComponent");
+
+
 }
 
 UPawnCombatComponent* AWarriorEnemyCharacter::GetPawnCombatComponent() const
@@ -51,7 +53,7 @@ void AWarriorEnemyCharacter::InitEnemyStartUpData()
 				if (UDataAsset_StartUpDataBase * LoadedData = CharacterStartUpData.Get()) {
 					LoadedData->GiveToAbilitySystemComponent(WarriorAbilitySystemComponent);
 
-					/*Debug::Print(TEXT("Enemy Start Up Data Loaded"), FColor::Green);*/
+					//Debug::Print(TEXT("Enemy Start Up Data Loaded"), FColor::Green);
 				}
 			}
 		)
