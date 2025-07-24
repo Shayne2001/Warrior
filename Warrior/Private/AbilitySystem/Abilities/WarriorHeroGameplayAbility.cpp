@@ -37,6 +37,7 @@ FGameplayEffectSpecHandle UWarriorHeroGameplayAbility::MakeHeroDamageEffectSpecH
     ContextHandle.SetAbility(this);
     ContextHandle.AddSourceObject(GetAvatarActorFromActorInfo());
     ContextHandle.AddInstigator(GetAvatarActorFromActorInfo(), GetAvatarActorFromActorInfo());
+
     FGameplayEffectSpecHandle EffectSpecHandle = GetWarriorAbilitySystemComponentFromActorInfo()->MakeOutgoingSpec(
         EffectClass,
         GetAbilityLevel(),
