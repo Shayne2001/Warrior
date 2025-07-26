@@ -43,7 +43,11 @@ public:
 	virtual void OnWeaponPulledFromTargetActor(AActor* InteractedActor);
 
 protected:
+	virtual void ToggleCurrentEquippedWeaponCollision(bool bShouldEnable);
+	virtual void ToggleBodyCollisionBoxCollision(bool bShouldEnable, EToggleDamageType ToggleDamageType);
+
 	TArray<AActor*> OverlappedActors;
+
 private:
 	// TMap方便检索武器，且方便后续添加，尽管当前每种角色只有一种武器
 	TMap<FGameplayTag, AWarriorWeaponBase*> CharacterCarriedWeaponMap;
