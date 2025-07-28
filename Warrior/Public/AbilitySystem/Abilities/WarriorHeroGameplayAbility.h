@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
 	FGameplayEffectSpecHandle MakeHeroDamageEffectSpecHandle(TSubclassOf<UGameplayEffect> EffectClass, float InWeaponBaseDamage, FGameplayTag InCurrentAttackTypeTag, int32 InUsedComboCount);
 
+	UFUNCTION(BlueprintCallable, Category = "Warrior|Ability")
+	bool GetAbilityRemainingCooldownByTag(FGameplayTag InCooldownTag, float& TotalCooldownTime, float& RemainingCooldownTime);
+
 private:
 	// TWeakObjectPtr是一种UE的智能指针，不会使指向的对象保持活动状态，只包含对它的引用
 	TWeakObjectPtr<AWarriorHeroCharacter> CachedWarriorHeroCharacter;
